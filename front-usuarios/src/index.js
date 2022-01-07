@@ -13,12 +13,6 @@ import ContactanosComponent from './Components/UsersComponents/Adicionales/Conta
 import DesarrolladoresComponent from './Components/UsersComponents/Adicionales/DesarrolladoresComponent'
 import AboutUsComponent from './Components/UsersComponents/Adicionales/AboutUSComponent'
 import testJSON from './Components/testJSON'
-import GraphComponent from './Components/AdminsComponents/GraphAndMaps/GraphComponent'
-import MainAdmins from './Components/AdminsComponents/Main/MainAdmins'
-import PanelProducts from './Components/AdminsComponents/PanelProductos/PanelProducts'
-import AccountComponent from './Components/AdminsComponents/Account/Account'
-import ClientesComponent from './Components/AdminsComponents/PanelClientes/ClientesComponent'
-import MapComponent from './Components/AdminsComponents/GraphAndMaps/MapComponent'
 import CatalogoComponent from './Components/UsersComponents/Busqueda/CatalogoComponent'
 import PerfilComponent from './Components/UsersComponents/Perfil/PerfilPC'
 import { applyMiddleware, createStore } from 'redux'
@@ -71,12 +65,6 @@ const Index = () => {
             <Route path="/devs" exact component={DesarrolladoresComponent}/>
             <Route path="/aboutus" exact component={AboutUsComponent}/>
             <Route path="/test" exact component={testJSON}/>
-            <Route path="/admin/dashboard" exact component={MainAdmins}/>
-            <Route path="/admin/dashboard/report" exact component={GraphComponent}/>
-            <Route path="/admin/dashboard/panel" exact component={PanelProducts}/>
-            <Route path="/admin/dashboard/account" exact component={AccountComponent}/>
-            <Route path="/admin/dashboard/customer" exact component={ClientesComponent}/>
-            <Route path="/admin/dashboard/map" exact component={MapComponent}/>
             <Route path="/buscador" exact component={CatalogoComponent}/>
             <Route path="/buscador/:id" exact>
               <CatalogoComponent></CatalogoComponent>

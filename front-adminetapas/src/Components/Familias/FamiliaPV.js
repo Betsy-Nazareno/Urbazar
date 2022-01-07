@@ -6,7 +6,7 @@ import StickyHeadTable from './Tabla'
 import LoadInfo from './LoadInfo'
 
 const FamiliaPV = (props) => {
-  const etapas = LoadInfo('http://134.209.215.193:3000/etapas')
+  const etapas = LoadInfo('http://localhost:3000/etapas')
 
   return (
 

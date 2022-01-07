@@ -21,19 +21,19 @@ const Perfil = () => {
   const [user, setUser] = useState({})
 
   useEffect(() => {
-    axios.get(`http://134.209.215.193:3000/personas/${localStorage.getItem('userId')}`).then((result) => {
+    axios.get(`http://localhost:3000/personas/${localStorage.getItem('userId')}`).then((result) => {
       setUser(result.data)
       setLoad(true)
     })
   }, [])
   useEffect(() => {
     if (query.get('email')) {
-      axios.get(`http://134.209.215.193:3000/personas/${localStorage.getItem('userId')}`).then((result) => {
+      axios.get(`http://localhost:3000/personas/${localStorage.getItem('userId')}`).then((result) => {
         const persona = result.data
         persona.nombre = query.get('nombre')
         persona.edad = Number(query.get('edad'))
         persona.telefono = query.get('telefono')
-        axios.put(`http://134.209.215.193:3000/personas/${localStorage.getItem('userId')}`, persona).then((result) => {
+        axios.put(`http://localhost:3000/personas/${localStorage.getItem('userId')}`, persona).then((result) => {
           history.push('/admin/dashboard/account')
           window.location.reload()
         })

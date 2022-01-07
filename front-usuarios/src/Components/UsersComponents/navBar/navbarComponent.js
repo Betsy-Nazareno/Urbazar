@@ -15,37 +15,11 @@ const NavbarComponent = (props) => {
 
   useEffect(() => {
     console.log(localStorage.getItem('userId'))
-    axios.get(`http://${data.number}/clientes/persona/${localStorage.getItem('userId')}`)
     
-    .then(response => response.data)
-    .then((res) => {
-      axios.get(`http://${data.number}/carrito/cliente/${res[0].id}`).then(response => {
-        let res = response.data
-        axios.get(`http://${data.number}/detalle-carrito/carrito/${res[0].id}`).then(response => {
-          setCantProductos(response.data.length)
-        })
-      }).catch(err => {
-        console.log(err)
-      }) 
-    })
   },[])
 
   idCarritoDef = idCarrito
   let cantidad = 0
-/** 
- *   axios.get(`http://${data.number}/detalle-carrito/${idCarritoDef}`)
-    .then(response => response.data)
-    .then((res2) => {
-      for (let i = 0; i < res2.length; i++) {
-        if (res2[i].idCarrito === idCarrito) {
-          cantidad++
-        }
-      }
-      setCantProductos(cantidad)
-      cantidadProd = cantProductos
-    }
-    )
-*/
 
 
   return (

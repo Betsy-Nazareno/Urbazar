@@ -37,7 +37,7 @@ const useStyles = makeStyles({
 })
 
 export default function StickyHeadTable () {
-  const familias = LoadInfo('http://134.209.215.193:3000/familias')
+  const familias = LoadInfo('http://localhost:3000/familias')
   console.log(familias)
   const classes = useStyles()
   const [page, setPage] = React.useState(0)

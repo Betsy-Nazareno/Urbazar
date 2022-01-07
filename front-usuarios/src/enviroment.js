@@ -3,7 +3,7 @@ const urlprod = "http://134.209.215.193:3000/"
 
 const data = {
     url: urldev,
-    number: "134.209.215.193:3000",
+    number: "localhost:3000",
     urlProd: "134.209.215.193:3000/",
 }
 

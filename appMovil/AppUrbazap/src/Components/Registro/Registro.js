@@ -92,7 +92,7 @@ const Register= ( props) => {
             role: 0,
             id_etapa: 1
           }
-        axios.post(`http://134.209.215.193:3000/personas`, data)
+        axios.post(`http://${data.number}/personas`, data)
         .then(response => {
             response.data
             console.log("LLego aquí")

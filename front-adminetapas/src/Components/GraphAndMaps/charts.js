@@ -11,7 +11,7 @@ const durations = 500
 const delays2 = 80
 const durations2 = 500
 
-fetch('http://134.209.215.193:3000/productos')
+fetch('http://localhost:3000/productos')
   .then(response => response.json())
   .then(data => {
     console.log(data)

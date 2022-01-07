@@ -32,10 +32,10 @@ class Admin_EtapasPC extends Component {
     }
     console.log(data_etapa)
 
-    axios.post('http://134.209.215.193:3000/etapas', data_etapa)
+    axios.post('http://localhost:3000/etapas', data_etapa)
       .catch(e => console.log(e))
 
-    axios.get('http://134.209.215.193:3000/personas?filter[where][nombre]=' + this.state.form.nombre_admin)
+    axios.get('http://localhost:3000/personas?filter[where][nombre]=' + this.state.form.nombre_admin)
       .then(response => response.data[0])
       .then(res => {
         if (res) {
@@ -51,9 +51,9 @@ class Admin_EtapasPC extends Component {
           idEtapa: parseInt(this.state.form.id_etapa, 10)
         }
 
-        axios.post('http://134.209.215.193:3000/administrador-etapas', data_admin)
+        axios.post('http://localhost:3000/administrador-etapas', data_admin)
           .then(response => {
-            axios.put('http://134.209.215.193:3000/personas/' + persona.id, persona)
+            axios.put('http://localhost:3000/personas/' + persona.id, persona)
               .then(res => {
                 this.handleModal()
               })

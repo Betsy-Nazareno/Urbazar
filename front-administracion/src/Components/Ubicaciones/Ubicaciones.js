@@ -19,7 +19,7 @@ const Ubicaciones = () => {
     return l
   }
   useEffect(() => {
-    axios.get('http://134.209.215.193:3000/matriz/1').then((response) => {
+    axios.get('http://localhost:3000/matriz/1').then((response) => {
       const respuesta = JSON.parse(response.data.data)
       const mat = new GraphMA(false)
       console.log(respuesta)
@@ -31,7 +31,7 @@ const Ubicaciones = () => {
       setLoad(true)
     }).catch((err) => {
       console.log(err)
-      axios.post('http://134.209.215.193:3000/matriz', {
+      axios.post('http://localhost:3000/matriz', {
         id: 1,
         data: JSON.stringify(new GraphMA(false)),
         urbanizacion: 'Villa Bonita'
@@ -103,7 +103,7 @@ const Ubicaciones = () => {
                           matriz.addVertex(source)
                           matriz.addVertex(dest)
                           matriz.addEdge(source, dest, valor)
-                          axios.put('http://134.209.215.193:3000/matriz/1', {
+                          axios.put('http://localhost:3000/matriz/1', {
                             id: 1,
                             data: JSON.stringify(matriz),
                             urbanizacion: 'Villa Bonita'
@@ -138,7 +138,7 @@ const Ubicaciones = () => {
                         <div className="d-flex justify-content-center">
                         <button className="btnUapp" onClick={e => {
                           matriz.setEdge(source, dest, valor)
-                          axios.put('http://134.209.215.193:3000/matriz/1', {
+                          axios.put('http://localhost:3000/matriz/1', {
                             id: 1,
                             data: JSON.stringify(matriz),
                             urbanizacion: 'Villa Bonita'

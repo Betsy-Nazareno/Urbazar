@@ -5,7 +5,7 @@ const Productos = () => {
   const [productoLista, setProductoLista] = useState([])
   const [load, setLoad] = useState(false)
   useEffect(() => {
-    axios.get('http://134.209.215.193:3000/productos/').then((response) => {
+    axios.get('http://localhost:3000/productos/').then((response) => {
       setProductoLista(response.data)
       setLoad(true)
     })
@@ -19,16 +19,10 @@ const Productos = () => {
                     </tr>
                 </thead>
                 <tbody>
-<<<<<<< HEAD
-                    {load ? productoLista.map((item) => {
-                        return(
-                            <tr key="row">
-=======
                     {load
                       ? productoLista.map((item, id) => {
                         return (
                             <tr key={id}>
->>>>>>> 7a130e371e37b75785df5c5f395eb6b061d750e9
                                 <td>{item.id}</td>
                                 <td>{item.nombre}</td>
                                 <td>{item.precio}</td>

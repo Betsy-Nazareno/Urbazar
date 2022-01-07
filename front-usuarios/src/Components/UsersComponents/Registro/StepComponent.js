@@ -413,11 +413,11 @@ class HorizontalNonLinearStepper extends Component{
     console.log(data);
     
     if(this.props.validarVacios() && this.state.user_check && this.state.password_check && this.state.password2_check && this.state.codigo_check){
-      axios.post(`http://134.209.215.193:3000/personas`, data)
+      axios.post(`http://${data.number}/personas`, data)
           .then(response => response.data)
           .then( res=> console.log(res))
           .then(()=>{
-            axios.get(`http://134.209.215.193:3000/personas`)
+            axios.get(`http://${data.number}/personas`)
             .then(response=> {
               let rspta = response.data
               let id_cliente = rspta[rspta.length-4].id; //Este es un parche provisional, debe obtenerse correctamente el id de la persona que se está registrando
@@ -433,7 +433,7 @@ class HorizontalNonLinearStepper extends Component{
               }
 
 
-              axios.post(`http://134.209.215.193:3000/clientes`, data_cliente)
+              axios.post(`http://${data.number}/clientes`, data_cliente)
               .catch(e=> console.log("TERCERO", e))
             })
           .catch(e=> console.log(" SEGUNDO Hubo un error", e))

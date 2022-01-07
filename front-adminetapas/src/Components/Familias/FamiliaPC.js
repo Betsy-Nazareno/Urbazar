@@ -30,7 +30,7 @@ class FamiliaPC extends Component {
 
     console.log(data)
 
-    axios.post('http://134.209.215.193:3000/familias', data)
+    axios.post('http://localhost:3000/familias', data)
       .catch(e => console.log(e))
 
     apellidoComp.value = ''
